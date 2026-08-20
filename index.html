@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>crisrecorder</title>
+<meta name="description" content="Screen recorder that runs entirely in the browser.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='9' fill='%23ff4436'/></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app">
+  <header class="masthead">
+    <h1 class="wordmark">crisrecorder</h1>
+    <p class="tagline">Record your screen in the browser. The video never leaves your machine.</p>
+  </header>
+
+  <section class="stage" data-stage>
+    <video class="stage__video" data-preview playsinline></video>
+    <p class="stage__hint" data-hint>Pick a screen, window, or tab when the browser asks.</p>
+  </section>
+
+  <section class="console">
+    <div class="readout">
+      <span class="beacon" data-beacon></span>
+      <span class="readout__time" data-elapsed>00:00</span>
+      <span class="readout__size" data-size></span>
+    </div>
+
+    <div class="settings">
+      <label class="toggle">
+        <input type="checkbox" data-microphone>
+        <span>Microphone</span>
+      </label>
+      <label class="picker">
+        <span>Format</span>
+        <select data-format></select>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button class="button button--record" data-record>Record</button>
+      <button class="button" data-pause hidden>Pause</button>
+      <button class="button" data-stop hidden>Stop</button>
+      <a class="button button--save" data-save hidden download>Download</a>
+      <button class="button" data-reset hidden>Record again</button>
+    </div>
+  </section>
+
+  <p class="notice" data-notice hidden></p>
+</main>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
